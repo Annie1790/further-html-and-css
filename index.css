@@ -1,0 +1,128 @@
+html {
+    --s: 31px; /* control the size*/
+    --c1: #7a7766;
+    --c2: #57595c;
+    
+    --_g: var(--c1)        6.1%,var(--c2)  6.4% 18.6%,var(--c1) 18.9% 31.1%,
+          var(--c2) 31.4% 43.6%,var(--c1) 43.9% 56.1%,var(--c2) 56.4% 68.6%,#0000 68.9%;
+    background:
+      radial-gradient(var(--s) at 100% 0   ,var(--_g)),
+      radial-gradient(var(--s) at 0    0   ,var(--_g)),
+      radial-gradient(var(--s) at 0    100%,var(--_g)),
+      radial-gradient(var(--s) at 100% 100%,var(--_g)) var(--c1);
+    background-size: var(--s) var(--s);
+  }
+
+  body {
+    margin: 0px;
+    min-width: fit-content;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 0.5fr auto 0.1fr;
+  }
+
+  header {
+    grid-row: 1/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header {
+    color: whitesmoke;
+    font-style: italic;
+  }
+
+  .logo {
+    width: 400px;
+    height: auto;
+  }
+
+  main {
+    grid-row: 2/2;
+  }
+
+  .box {
+    --hue: rgba(0, 0, 0, 0.493);
+    background-color: var(--hue);
+    -webkit-box-shadow: 0px 0px 31px 33px var(--hue);
+    -moz-box-shadow: 0px 0px 31px 33px var(--hue);
+    box-shadow: 0px 0px 31px 33px var(--hue);
+  }
+
+  .box-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .example-text {
+    color: whitesmoke;
+    font-style: italic;
+    font-size: xx-large;
+    padding-left: 10%;
+  }
+
+  .zelda-image {
+    width: 300px;
+    height: auto;
+  }
+
+
+  main::before {
+    background: url('./hyrule_rule.png') center;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 86px;
+  }
+
+  main::after {
+    background: url('./hyrule_rule.png') center;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 86px;
+  }
+
+  footer {
+    --gold_colour: rgba(255, 214, 68, 0.75);
+    grid-row: 3/3;
+    background-color: rgba(0, 0, 0, 0.493);
+    -webkit-box-shadow: 0px -1px 2px 0px var(--gold_colour);
+    -moz-box-shadow: 0px -1px 2px 0px var(--gold_colour);
+    box-shadow: 0px -1px 2px 0px var(--gold_colour);
+  }
+
+  .footer-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+  }
+
+  @media screen and (max-width: 700px) {
+    body {
+        grid-template-rows: 0.1fr auto 0.05fr;
+    }
+
+    .header {
+        font-size: small;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    .example-text {
+        font-size: small;
+        padding: 5%;
+    }
+
+    .box-container {
+        flex-direction: column;
+      }
+  }
