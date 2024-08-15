@@ -1,0 +1,184 @@
+$bg_clr_1: #7a7766;
+$bg_clr_2: #57595c;
+$bg_size: 31px;
+$hue: rgba(0, 0, 0, 0.493);
+$gold_clr: rgba(255, 214, 68, 0.75);
+$darker_gold_clr: rgba(146, 122, 38, 0.75);
+
+@mixin centering() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin gradient_text() {
+  background: #FCEABB;
+  background: radial-gradient(circle farthest-corner at center center, #FCEABB 0%, #FCCD4D 50%, #FBDF93 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin dado_rail() {
+  background: url('./hyrule_rule.png') center;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 86px;
+}
+
+html {
+  --s: $bg_size;
+  --c1: $bg_clr_1;
+  --c2: $bg_clr_2;
+  
+  --_g: var(--c1)        6.1%,var(--c2)  6.4% 18.6%,var(--c1) 18.9% 31.1%,
+        var(--c2) 31.4% 43.6%,var(--c1) 43.9% 56.1%,var(--c2) 56.4% 68.6%,#0000 68.9%;
+  background:
+    radial-gradient(var(--s) at 100% 0   ,var(--_g)),
+    radial-gradient(var(--s) at 0    0   ,var(--_g)),
+    radial-gradient(var(--s) at 0    100%,var(--_g)),
+    radial-gradient(var(--s) at 100% 100%,var(--_g)) var(--c1);
+  background-size: var(--s) var(--s);
+}
+
+body {
+  margin: 0px;
+  min-width: fit-content;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 0.5fr auto 0.1fr;
+}
+
+header {
+  @include centering();
+  grid-row: 1/1;
+  flex-direction: column;
+}
+
+header h1 {
+  color: whitesmoke;
+  font-style: italic;
+}
+
+header img {
+  width: 400px;
+  height: auto;
+}
+
+main {
+  grid-row: 2/2;
+
+  .box {
+    background-color: $hue;
+    -webkit-box-shadow: 0px 0px 31px 33px $hue;
+    -moz-box-shadow: 0px 0px 31px 33px $hue;
+    box-shadow: 0px 0px 31px 33px $hue;
+  }
+}
+
+.box-container-row {
+  @include centering();
+  flex-direction: row;
+}
+
+.box-container-column {
+  @include centering();
+  flex-direction: column;
+}
+
+ul {
+  margin: 0%;
+
+  li {
+    list-style: none;
+    font-size: xx-large;
+    padding-left: 5%;
+    padding-right: 5%;
+    @include gradient_text();
+  }
+}
+
+.example-text {
+  color: whitesmoke;
+  font-style: italic;
+  font-size: xx-large;
+  padding-left: 10%;
+}
+
+.zelda-image {
+  width: 300px;
+  height: auto;
+}
+
+main::before {
+  @include dado_rail();
+}
+
+main::after {
+  @include dado_rail();
+}
+
+footer {
+  grid-row: 3/3;
+  background-color: rgba(0, 0, 0, 0.493);
+  -webkit-box-shadow: 0px -1px 2px 0px $gold_clr;
+  -moz-box-shadow: 0px -1px 2px 0px $gold_clr;
+  box-shadow: 0px -1px 2px 0px $gold_clr;
+}
+
+.footer-text {
+  @include centering();
+  color: whitesmoke;
+}
+
+a {
+  color: whitesmoke;
+  text-decoration: none;
+  margin-left: 1%;
+  background-color: $gold_clr;
+  -webkit-box-shadow: 0px 0px 3px 4px $gold_clr;
+  -moz-box-shadow: 0px 0px 3px 4px $gold_clr;
+  box-shadow: 0px 0px 3px 4px $gold_clr;
+  transition: all 0.3s ease 0s;
+}
+
+a:hover {
+  color: $darker_gold_clr;
+  transition: all 0.3s ease 0s;
+  background-color: whitesmoke;
+  -webkit-box-shadow: 0px 0px 3px 4px whitesmoke;
+  -moz-box-shadow: 0px 0px 3px 4px whitesmoke;
+  box-shadow: 0px 0px 3px 4px whitesmoke;
+}
+
+a:visited {
+  color: $darker_gold_clr;
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    grid-template-rows: 0.1fr auto 0.05fr;
+  }
+
+  .header {
+    font-size: small;
+  }
+
+  .logo {
+    width: 200px;
+  }
+
+  li {
+    font-size: small;
+  }
+
+  .example-text {
+    font-size: small;
+    padding: 5%;
+  }
+
+  .box-container {
+    flex-direction: column;
+  }
+}
