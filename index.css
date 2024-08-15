@@ -112,6 +112,7 @@ html {
 
   footer {
     --gold_colour: rgba(255, 214, 68, 0.75);
+    --darker_gold_colour: rgba(146, 122, 38, 0.75);
     grid-row: 3/3;
     background-color: rgba(0, 0, 0, 0.493);
     -webkit-box-shadow: 0px -1px 2px 0px var(--gold_colour);
@@ -127,15 +128,27 @@ html {
   }
 
   a {
-
+    color: whitesmoke;
+    text-decoration: none;
+    margin-left: 1%;
+    background-color: var(--gold_colour);
+    -webkit-box-shadow: 0px 0px 3px 4px var(--gold_colour);
+    -moz-box-shadow: 0px 0px 3px 4px var(--gold_colour);
+    box-shadow: 0px 0px 3px 4px var(--gold_colour);
+    transition: all 0.3s ease 0s;
   }
 
   a:hover {
-
+    color: var(--darker_gold_colour);
+    transition: all 0.3s ease 0s;
+    background-color: whitesmoke;
+    -webkit-box-shadow: 0px 0px 3px 4px whitesmoke;
+    -moz-box-shadow: 0px 0px 3px 4px whitesmoke;
+    box-shadow: 0px 0px 3px 4px whitesmoke;
   }
 
   a:visited {
-
+    color: var(--darker_gold_colour);
   }
 
   @media screen and (max-width: 700px) {
