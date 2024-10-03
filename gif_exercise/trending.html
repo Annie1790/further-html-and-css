@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giphy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            flex-grow: 1;
+        }
+        main img {
+            background-color: #ddd;
+            width: 30%;
+            height: 150px;
+            border-radius: 8px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+    <script src="requests.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome, User!</h1>
+    </header>
+
+    <main>
+        <img class="image"></img>
+        <img class="image"></img>
+        <img class="image"></img>
+        <img class="image"></img>
+        <img class="image"></img>
+        <img class="image"></img>
+        <img class="image"></img>
+        <img class="image"></img>
+        <img class="image"></img>
+        <img class="image"></img>
+    </main>
+
+    <footer>
+        <div>Apprentice exercise</div>
+    </footer>
+
+</body>
+</html>

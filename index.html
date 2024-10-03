@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML and CSS Exercise</title>
     <link rel="stylesheet" href="./index.css">
+    <script>
+        function hideImage() {
+            let image = document.querySelector(".zelda-image")
+        
+        
+        image.addEventListener('mouseover', () => {
+            image.style.display = "none";
+        })
+        }
+
+
+    </script>
 </head>
 
 <body>
@@ -30,8 +42,11 @@
                     The Triforce grants a wish to those who possess the three virtues of the goddesses: power,
                     wisdom,and courage. If one doesn’t have the proper balance of virtues, the Triforce will split into
                     three pieces. Only by reuniting all three pieces can the true power of the Triforce be obtained.</p>
-                <img class="zelda-image" src="./Princess_Zelda.webp" alt="Princess Zelda">
+                <img onmouseenter="hideImage()" class="zelda-image" src="./Princess_Zelda.webp" alt="Princess Zelda">
             </div>
+        </div>
+        <div>
+            <p class="example-text">javascript: hover over on Zelda image to make it disappear</p>
         </div>
     </main>
     <footer>
